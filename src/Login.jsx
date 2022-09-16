@@ -1,12 +1,16 @@
-import React from 'react'
-import { StytchLogin, useStytchSession } from "@stytch/react";
-import { Link } from "react-router-dom";
+import React, {useEffect} from 'react'
+import { StytchLogin, useStytchSession, useStytchUser } from "@stytch/react";
+import {Products} from "@stytch/vanilla-js"
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  console.log(Products)
+  const {user} = useStytchUser()
   const {session} = useStytchSession()
+  const navigate = useNavigate()
   const stytchProps = {
     loginOrSignupView: {
-      products: ["emailMagicLinks"],
+      products: [Products.emailMagicLinks],
       emailMagicLinksOptions: {
         loginRedirectURL: 'https://' + window.location.hostname + "/authenticate",
         loginExpirationMinutes: 30,
@@ -22,7 +26,12 @@ const Login = () => {
     }
   };
 
-  console.log('session', session)
+  useEffect(() => {
+    if(user) {
+      navigate('/profile')
+    }
+    
+  }, [user, navigate])
 
   return (
     <main>
