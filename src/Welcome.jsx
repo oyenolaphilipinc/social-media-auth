@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import red from "./redirects.png"
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <li>Add the following redirect URLs at <a href="https://stytch.com/dashboard/redirect-urls" target="_blank">stytch.com/dashboard/redirect-urls</a>:  <code>https://*.id.repl.co/authenticate</code> and <code>https://*.repl.co/authenticate</code>. Be sure to select Type <strong>All</strong> when creating it.
 
           </li>
-          <img width={300} src="src/redirects.png" />
+          <img width={300} src={red} />
           <li>In the <a href="https://stytch.com/dashboard/sdk-configuration" target="_blank">SDK configuration</a> add the domain <code>
             https://*.*.repl.co</code> and toggle on <strong>Email magic links</strong> underneath <strong>Auth methods</strong>
           </li>
