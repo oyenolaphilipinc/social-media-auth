@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import red from "./redirects.png"
+import sdk from "./sdk.png"
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <li>In the <a href="https://stytch.com/dashboard/sdk-configuration" target="_blank">SDK configuration</a> add the domain <code>
             https://*.*.repl.co</code> and toggle on <strong>Email magic links</strong> underneath <strong>Auth methods</strong>
           </li>
-          <img width={300} src="src/sdk.png" />
+          <img width={300} src={sdk} />
           <li>Copy your <strong>Public token</strong> from the <a href="https://stytch.com/dashboard/api-keys" target="_blank">API keys</a> page, and set it to the <code>STYTCH_PUBLIC_TOKEN</code> variable in <code>main.jsx</code>.</li>
         </ol>
       </div>
