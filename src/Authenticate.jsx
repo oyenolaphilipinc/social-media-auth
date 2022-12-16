@@ -19,15 +19,15 @@ const Authenticate = () => {
             session_duration_minutes: 30,
           })
           console.log('Authentication sucessful. Redirecting to Profile page.')
-          navigate('../profile')
+          navigate('/profile')
         } catch (e) {
           // Something went wrong. Redirect to login page
           console.error(e)
-          navigate('../login')
+          navigate('/login')
         }
       } else {
         console.error('No magic link token found. Redirecting to Login page.')
-        navigate('../login')
+        navigate('/login')
       }
     }
     authenticateToken()
